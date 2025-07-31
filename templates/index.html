@@ -1,28 +1,43 @@
-
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <title>Stock Price Predictor</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
 </head>
 <body>
-    <h2>Stock Price Prediction (Prophet & Tuned XGBoost)</h2>
-    
-    <form method="post" action="/predict">
-        <label>Stock Name (e.g., INFY.NS):</label><br>
-        <input type="text" name="stock" required><br><br>
-
-        <label>Target Date (YYYY-MM-DD):</label><br>
-        <input type="date" name="date" required><br><br>
-
-        <input type="submit" value="Predict">
-    </form>
-
-    {% if prophet_price and xgb_price %}
-        <h3>Predictions for {{ stock }} on {{ date }}:</h3>
-        <p>🔹 Prophet: ₹{{ prophet_price }}</p>
-        <p>🔹 Tuned XGBoost: ₹{{ xgb_price }}</p>
-    {% elif error %}
-        <p style="color:red;">⚠️ Error: {{ error }}</p>
-    {% endif %}
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Stock Price Predictor&lt;/title&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Stock Price Prediction (Prophet &amp; Tuned XGBoost)&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;form method="post" action="/predict"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;Stock Name (e.g., INFY.NS):&lt;/label&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" name="stock" required&gt;&lt;br&gt;&lt;br&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;Target Date (YYYY-MM-DD):&lt;/label&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="date" name="date" required&gt;&lt;br&gt;&lt;br&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="submit" value="Predict"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/form&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>{% if prophet_price and xgb_price %}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Predictions for {{ stock }} on {{ date }}:&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;🔹 Prophet: ₹{{ prophet_price }}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;🔹 Tuned XGBoost: ₹{{ xgb_price }}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{% elif error %}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="color:red;"&gt;⚠️ Error: {{ error }}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{% endif %}</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
