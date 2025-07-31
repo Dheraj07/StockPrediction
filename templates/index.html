@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Price Predictor</title>
+</head>
+<body>
+    <h2>Stock Price Prediction (Prophet & Tuned XGBoost)</h2>
+    
+    <form method="post" action="/predict">
+        <label>Stock Name (e.g., INFY.NS):</label><br>
+        <input type="text" name="stock" required><br><br>
+
+        <label>Target Date (YYYY-MM-DD):</label><br>
+        <input type="date" name="date" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prophet_price and xgb_price %}
+        <h3>Predictions for {{ stock }} on {{ date }}:</h3>
+        <p>🔹 Prophet: ₹{{ prophet_price }}</p>
+        <p>🔹 Tuned XGBoost: ₹{{ xgb_price }}</p>
+    {% elif error %}
+        <p style="color:red;">⚠️ Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
